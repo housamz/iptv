@@ -1,6 +1,12 @@
 import AppButton from "./AppButton";
 
-export const Header = ({ tab, handleTab }) => {
+export const Header = ({
+  tab,
+  handleTab,
+}: {
+  tab: string;
+  handleTab: (tab: string) => void;
+}) => {
   const LINKS = ["country", "category", "all"];
   return (
     <div className="flex justify-between items-center">

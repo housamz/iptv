@@ -1,3 +1,5 @@
+import { SearchBarProps } from "../types";
+
 const SearchBar = ({
   search,
   setSearch,
@@ -9,7 +11,7 @@ const SearchBar = ({
   countries,
   categories,
   setPage,
-}) => {
+}: SearchBarProps) => {
   return (
     <div className="flex justify-between items-center mb-6 gap-4">
       <input

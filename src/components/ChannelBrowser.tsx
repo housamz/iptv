@@ -11,15 +11,16 @@ import {
 } from "../services/apiService";
 import SearchBar from "./SearchBar.jsx";
 import { Header } from "./Header.jsx";
+import { Channel, Stream } from "../types";
 
-export default function ChannelBrowser({ tab: initialTab }) {
+export default function ChannelBrowser({ tab: initialTab }: { tab: string }) {
   const PAGE_SIZE = 50;
-  const [channels, setChannels] = useState([]);
+  const [channels, setChannels] = useState<Channel[]>([]);
   const [loadingStreams, setLoadingStreams] = useState(true);
   const [page, setPage] = useState(1);
-  const [playingChannel, setPlayingChannel] = useState(null);
+  const [playingChannel, setPlayingChannel] = useState<Channel | null>(null);
   const [search, setSearch] = useState("");
-  const [streams, setStreams] = useState([]);
+  const [streams, setStreams] = useState<Stream[]>([]);
   const [tab, setTab] = useState(initialTab || "country");
   const [countries, setCountries] = useState([]);
   const [categories, setCategories] = useState([]);
@@ -60,7 +61,7 @@ export default function ChannelBrowser({ tab: initialTab }) {
   }, [channels, search, page, tab, selectedCountry, selectedCategory]);
 
   const handleLoadMore = () => setPage((p) => p + 1);
-  const handleTab = (t) => {
+  const handleTab = (t: string): void => {
     setTab(t);
     setPage(1);
     setSearch("");
