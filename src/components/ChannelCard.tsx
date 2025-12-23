@@ -1,4 +1,6 @@
-const ChannelCard = ({ channel, setPlayingChannel }) => {
+import { ChannelCardProps } from "../types";
+
+const ChannelCard = ({ channel, setPlayingChannel }: ChannelCardProps) => {
   return (
     <li
       key={channel.id}

@@ -1,4 +1,6 @@
-export default function AppButton({ children, className = "", ...props }) {
+import { AppButtonProps } from "../types";
+
+export default function AppButton({ children, className = "", ...props }: AppButtonProps) {
   return (
     <button
       className={

@@ -1,4 +1,14 @@
-export default function ChannelPlayer({ channel, streams, loading }) {
+import { Stream, Channel } from "../types";
+
+export default function ChannelPlayer({
+  channel,
+  streams,
+  loading,
+}: {
+  channel: Channel;
+  streams: Stream[];
+  loading: boolean;
+}) {
   // Try to match by channelId, or by title if channel is null
   const filtered = streams.filter(
     (s) =>
