@@ -8,13 +8,18 @@ import {
 import ChannelBrowser from "./components/ChannelBrowser.jsx";
 
 function App() {
+  const LINKS = ["/all", "/country", "/category"];
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Navigate to="/country" replace />} />
-        <Route path="/all" element={<ChannelBrowser tab="all" />} />
-        <Route path="/country" element={<ChannelBrowser tab="country" />} />
-        <Route path="/category" element={<ChannelBrowser tab="category" />} />
+        {LINKS.map((link) => (
+          <Route
+            key={link}
+            path={link}
+            element={<ChannelBrowser tab={link.slice(1)} />}
+          />
+        ))}
       </Routes>
     </Router>
   );
