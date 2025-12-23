@@ -1,8 +1,9 @@
 # IPTV Channel Browser
 
-A modern React + TailwindCSS web app for browsing, searching, filtering, and watching IPTV channels using the [iptv-org](https://github.com/iptv-org/database) public API.
+A modern React + TypeScript + TailwindCSS web app for browsing, searching, filtering, and watching IPTV channels using the [iptv-org](https://github.com/iptv-org/database) public API.
 
 ## Features
+- Written in TypeScript for type safety
 - Search, filter, and lazy-load thousands of IPTV channels
 - Browse by country, category, or all channels
 - Watch channels directly in the browser (HLS streams)
@@ -21,6 +22,9 @@ npm install
 npm run dev
 ```
 Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+### TypeScript Migration
+This project is fully migrated to TypeScript. All source files use `.ts` and `.tsx` extensions. Type definitions for React and Node are included. You can add or update types in your components and services for even better type safety.
 
 ## API Endpoints Used
 All data is fetched from the [iptv-org public API](https://github.com/iptv-org/database):
@@ -71,13 +75,14 @@ All data is fetched from the [iptv-org public API](https://github.com/iptv-org/d
 ```
 
 ## Project Structure
-- `src/components/` — React UI components
-- `src/services/apiService.js` — All API fetch logic
-- `src/App.jsx` — Main app with router
+- `src/components/` — React UI components (`.tsx`)
+- `src/services/apiService.ts` — All API fetch logic
+- `src/App.tsx` — Main app with router
 - `tailwind.config.js` — TailwindCSS config
+- `tsconfig.json` — TypeScript config
 
 ## Customization
-- Edit `src/services/apiService.js` to add or modify API calls
+- Edit `src/services/apiService.ts` to add or modify API calls
 - UI is fully responsive and easy to theme with Tailwind
 
 ## Credits
